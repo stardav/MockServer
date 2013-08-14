@@ -276,7 +276,11 @@
         }
         else
         {
+#if DEBUG
             KMSLog(@"attempting to disconnect again: %@\nalready closed because:%@", reason, self.lastDisconnectReason);
+#else
+            KMSLog(@"attempting to disconnect again: %@", reason);
+#endif
         }
     });
 }
